@@ -1,23 +1,12 @@
 "use strict";
-var Sorter = /** @class */ (function () {
-    function Sorter(collection) {
-        this.collection = collection;
-    }
-    Sorter.prototype.sort = function () {
-        var length = this.collection.length;
-        for (var i = 0; i < length; i++) {
-            for (var j = 0; j < length - i - 1; j++) {
-                // for array of number
-                if (this.collection[j] > this.collection[j + 1]) {
-                    var temp = this.collection[j];
-                    this.collection[j] = this.collection[j + 1];
-                    this.collection[j + 1] = temp;
-                }
-            }
-        }
-    };
-    return Sorter;
-}());
-var sorter = new Sorter([1, 2, 3, 4, 2, 1]);
+Object.defineProperty(exports, "__esModule", { value: true });
+var Sorter_1 = require("./Sorter");
+var CharactersCollection_1 = require("./CharactersCollection");
+// const numbersCollection = new NumbersCollection([10, 3, -5, 0]);
+// const sorter = new Sorter(numbersCollection);
+// sorter.sort();
+// console.log(numbersCollection.data);
+var charCollection = new CharactersCollection_1.CharacterCollection("Xaayb");
+var sorter = new Sorter_1.Sorter(charCollection);
 sorter.sort();
-console.log(sorter.collection);
+console.log(charCollection.data);
